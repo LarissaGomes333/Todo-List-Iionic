@@ -1,8 +1,28 @@
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <button (click)="criarLista()">Criar lista</button>
+  <main class="container-home">
+    <div>
+      <h2>Bem vindo, Ellen!</h2>
+    </div>
+
+    <section class="lista">
+    <div class="lista-item">
+      <input type="checkbox" name="" id="">
+      <label for="">Terminar o projeto</label>
+      <ion-icon name="close"></ion-icon>
+    </div>
+
+    <div class="lista-item">
+      <input type="checkbox" name="" id="">
+      <label for="">Terminar o projeto</label>
+      <ion-icon name="close"></ion-icon>
+    </div>
+
+    <div class="bnt-add-tela">
+      <button class="bnt-add" (click)="criarLista()"><ion-icon name="add"></ion-icon></button>
+    </div>
+
+
+    </section>
+  </main>
+
 </ion-content>
