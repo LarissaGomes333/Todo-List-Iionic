@@ -1,0 +1,20 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>inicio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">inicio</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <!-- Utilizar o código "(click)="logar" ou "(click)="cadastrar""" para a página ser direcionada para o login ou cadastro.
+    Obs: Não precisa estar na tag button, pode adicionar no a também
+    A função está no arquivo inicio.page.ts -->
+
+  <button (click)="logar()">Login</button>
+  <button (click)="cadastrar()">Cadastrar</button>
+</ion-content>
