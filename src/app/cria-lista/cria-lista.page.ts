@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-cria-lista',
@@ -8,12 +9,16 @@ import { Router } from '@angular/router';
 })
 export class CriaListaPage implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, public navCtrl: NavController) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
+
 
   voltar(){
+    this.router.navigate(['home'])
+  }
+
+  cancelar(){
     this.router.navigate(['home'])
   }
 

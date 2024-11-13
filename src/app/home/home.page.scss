@@ -4,9 +4,11 @@
   padding: 0;
 }
 
-.container-home{
+.titulo-home{
+  height: 100%;
   background-color: #B7FBFF;
-  height: 20%;
+  padding: 8% 0% 8% 6%;
+  
 }
 
 .lista{
@@ -27,6 +29,16 @@
   background-color: white;
   height: 90px;
   margin: 5%;
+  font-size: 20px;
+}
+
+.lista-item p{
+  font-size: initial;
+}
+
+.lista-item .checkbox{
+  width: 20px;
+  height: 20px;
 }
 
 .bnt-add{

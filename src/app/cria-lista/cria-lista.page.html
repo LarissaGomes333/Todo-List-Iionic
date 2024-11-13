@@ -1,8 +1,21 @@
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">criaLista</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <button (click)="voltar()">Voltar</button>
+<ion-content [fullscreen]="true" class="container-home">
+  <div class="bnt-voltar">
+    <ion-button (click)="voltar()" fill="clear">
+      <ion-icon name="arrow-back"></ion-icon>
+    </ion-button>
+  </div>
+
+  <main>
+    <h2>Nova Tarefa</h2>
+    <div>
+      <input class="lista-input" type="text" name="titulo" id="titulo" placeholder="Título">
+      <br>
+      <input class="lista-input" type="date" name="" id="data" placeholder="Data">
+      <br>
+      <textarea class="area-texto" name="" id="desc" cols="30" rows="10" placeholder="Insira a descrição..."></textarea>
+    </div>
+    <ion-button size="large" class="bnt-salvar" expand="block">Salvar</ion-button>
+    <ion-button size="large" (click)="cancelar()" class="bnt-cancelar" color="danger" expand="block">Cancelar</ion-button>
+  </main>
+
 </ion-content>
