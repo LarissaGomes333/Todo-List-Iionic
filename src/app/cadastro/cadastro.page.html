@@ -1,19 +1,40 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>cadastro</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">cadastro</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <section class="conteudo">
+    <h1 size="large">cadastro</h1>
+    <section>
+      <div class="input-cadastro">
+        <input type="text" name="" id="" placeholder="Nome">
+      </div>
+ 
+      <div class="input-cadastro">
+        <input type="tel" name="" id="" placeholder="Telefone">
+        <!-- <ion-icon name="eye"></ion-icon> -->
+      </div>
+ 
+      <div class="input-cadastro">
+        <input type="email" name="" id="" placeholder="Email">
+      </div>
+ 
+      <div class="input-cadastro">
+        <input type="password" name="" id="" placeholder="Senha">
+        <!-- <ion-icon name="eye"></ion-icon> -->
+      </div>
+    </section>
+ 
+    <section>
+      <ion-item>
+        <ion-checkbox slot="start"></ion-checkbox>
+        <ion-label>Li e aceito os termos.</ion-label>
+      </ion-item>
+      <button class="botao-cadastro">Cadastro</button>
+      <p class="conta" (click)="logar()">Já possui uma conta? <button (click)="logar()">Entre aqui</button>
+    </section>
+  </section>
+
   
   <!-- Utilizar o código "(click)="logar" para a página ser direcionada para o login.
   Obs: Não precisa estar na tag button, pode adicionar no <a> também
   A função está no arquivo cadastro.page.ts -->
   
-  <button (click)="logar()">Login</button>
+  <!-- <button (click)="logar()">Login</button> -->
 </ion-content>

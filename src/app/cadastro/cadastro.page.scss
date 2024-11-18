@@ -1,0 +1,68 @@
+.ion-content{
+    background-color: #B7FBFF;
+}
+
+h1{
+    margin: 35% 0 20% 0;
+    font-size: 28px;
+    text-align: center;
+    text-transform: uppercase;
+}
+ 
+.input-login{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    height: 100%;
+}
+ 
+input{
+    width: 80%;
+    height: 40px;
+    margin: 4% 0;
+    padding: 7%;
+    border-radius: 15px;
+    align-items: center;
+    color: #866EC7;
+    border-color: #866EC7;
+}
+
+.input-cadastro{
+    background-color: #B7FBFF;
+    align-items: center;
+}
+
+ 
+ion-icon{
+    height: 30px;
+    width: 25%;
+    position: absolute;
+    left: 70%;
+    top: 49%
+}
+ 
+ 
+.mensagem-senha{
+    display: block;
+    text-align-last: right;
+    color: black;
+}
+ 
+.botao-cadastro{
+    margin: 10% 0 10% 0;
+    border-radius: 10px;
+    width: 50%;
+    height: 60px;
+    background-color: #866EC7;
+    font-size: 20px;
+    align-self: center;
+}
+ 
+.conta{
+    text-align: center;
+}
+ 
+.checkbox{
+    font-size: 16px;
+}
+
