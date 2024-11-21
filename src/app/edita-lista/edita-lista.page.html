@@ -14,7 +14,7 @@
       <br>
       <textarea [(ngModel)]="post.details" class="area-texto" name="" id="desc" cols="30" rows="10" placeholder="Insira a descrição..."></textarea>
     </div>
-    <ion-button size="large" (click)="createPost(post)" class="bnt-salvar" expand="block">Salvar</ion-button>
+    <ion-button size="large" (click)="updatePost(post)" class="bnt-salvar" expand="block">Editar</ion-button>
     <ion-button size="large" (click)="cancelar()" class="bnt-cancelar" color="danger" expand="block">Cancelar</ion-button>
   </main>
 

@@ -1,17 +1,17 @@
-*{
+* {
   top: 0;
   margin: 0;
   padding: 0;
 }
 
-.titulo-home{
+.titulo-home {
   height: 100%;
   background-color: #B7FBFF;
   padding: 8% 0% 8% 6%;
-  
+
 }
 
-.lista{
+.lista {
   align-items: center;
   text-align: center;
   background-color: white;
@@ -19,7 +19,7 @@
   margin-top: 10%;
 }
 
-.lista-item{
+.lista-item {
   border: 3px solid #B7FBFF;
   border-radius: 10px;
   align-items: center;
@@ -32,18 +32,33 @@
   font-size: 20px;
 }
 
-.lista-item p{
+.lista-item p {
   font-size: initial;
 }
 
-.lista-item .checkbox{
+.lista-item .checkbox {
   width: 20px;
   height: 20px;
 }
 
-.bnt-add{
+.checkout {
+  border: 3px solid purple;
+  background-color: rgb(128, 0, 128, 0.1);
+  border-radius: 10px;
+  align-items: center;
+  align-content: center;
+  display: flex;
+  justify-content: space-around;
+  height: 90px;
+  margin: 5%;
+  font-size: 20px;
+  text-decoration-line: line-through;
+  color: gray;
+}
+
+.bnt-add {
   width: 20%;
-  height:80px;
+  height: 80px;
   background-color: purple;
   border-radius: 100px;
   color: white;

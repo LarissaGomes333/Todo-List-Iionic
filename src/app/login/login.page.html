@@ -4,17 +4,17 @@
     <section>
  
       <div class="input-cadastro">
-        <input type="email" name="" id="" placeholder="Email">
+        <input [(ngModel)]="user.email" type="email" name="" id="" placeholder="Email" required>
       </div>
  
       <div class="input-cadastro">
-        <input type="password" name="" id="" placeholder="Senha">
+        <input [(ngModel)]="user.password" type="password" name="" id="" placeholder="Senha" required>
         <!-- <ion-icon name="eye"></ion-icon> -->
       </div>
     </section>
  
     <section>
-      <button class="botao-login">Entrar</button>
+      <button (click)="login(user)" class="botao-login">Entrar</button>
       <p class="conta" (click)="cadastrar()">Ainda não possui uma conta? <button (click)="cadastrar()">Inscreva-se</button>
     </section>
   </section>

@@ -1,20 +1,14 @@
 <ion-content [fullscreen]="true">
   <main class="container-home">
-    <div class="titulo-home">
-      <h2>Bem vindo, Ellen!</h2>
+    <div class="titulo-home" *ngFor="let user of user">
+      <h2>Bem vindo, {{user.name}}</h2>
     </div>
 
     <section class="lista">
-    <div class="lista-item">
-      <input class="checkbox" type="checkbox" name="" id="">
-      <label for="">Terminar o projeto</label>
-      <ion-icon name="close"></ion-icon>
-    </div>
-
-    <div class="lista-item">
-      <input class="checkbox" type="checkbox" name="" id="">
-      <label for="">Terminar o projeto</label>
-      <ion-icon name="close"></ion-icon>
+    <div class="lista-item" *ngFor="let post of posts" [ngClass]="checkList? 'checkout' : 'lista-Item'">
+      <input class="checkbox" [(ngModel)]="checkList" (ionChange)="onCheckboxChange(post)" type="checkbox" name="" id="">
+      <label [routerLink]="['/edita-lista/' + post.id]" for="">{{ post.title }}</label>
+      <ion-icon (click)="deletePost(post.id)" name="close"></ion-icon>
     </div>
 
     <div class="bnt-add-tela">

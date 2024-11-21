@@ -1,0 +1,47 @@
+ion-button {
+    --background: #B7FBFF;
+    --background-hover: #B7FBFF;
+    --background-activated: #B7FBFF;
+    --background-focused: #B7FBFF;
+    --color: black;
+  }
+  
+  .bnt-voltar{
+    background-color: #B7FBFF;
+  }
+  
+  .bnt-voltar button{
+    font-size: 20px;
+    background-color: none;
+    border: none;
+  }
+  
+  h2{
+    text-align: center;
+    margin-bottom: 4%;
+  }
+  
+  main{
+    margin: 8%;
+  }
+  
+  input {
+    width: 100%;
+    height: auto;
+    font-size: 20px;
+    border:none;
+    border-bottom: 1px solid black;
+    margin: 5% 0;
+  }
+  
+  .area-texto {
+    background-color: rgb(217,217,217,29%);
+    width: 100%;
+    height: 100%;
+    padding-top: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 65%;
+    margin-bottom: 10% 0;
+    color: black;
+  }
