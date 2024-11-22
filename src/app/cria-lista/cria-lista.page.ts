@@ -40,7 +40,12 @@ export class CriaListaPage implements OnInit {
         });
       (await loader).present();
       try {
-        await this.firestore.collection("posts").add(post);
+        await this.firestore.collection("posts").add({
+          title: post.title,
+          date: post.date,
+          details: post.details,
+          status: false
+        });
       } catch (e: any) {
         this.showToast(e);
       }

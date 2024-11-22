@@ -41,7 +41,7 @@
   height: 20px;
 }
 
-.checkout {
+.item-riscado {
   border: 3px solid purple;
   background-color: rgb(128, 0, 128, 0.1);
   border-radius: 10px;
@@ -54,6 +54,11 @@
   font-size: 20px;
   text-decoration-line: line-through;
   color: gray;
+}
+
+.item-riscado .checkbox {
+  width: 20px;
+  height: 20px;
 }
 
 .bnt-add {

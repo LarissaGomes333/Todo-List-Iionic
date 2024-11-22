@@ -11,9 +11,11 @@ import { User } from '../models/user.module'
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  post = {} as Post;
   posts: any;
   user: any;
-  checkList: boolean = false;
+  id: any;
+  check: boolean = true;
 
   constructor(
     private router: Router,
@@ -22,10 +24,11 @@ export class HomePage {
     private firestore: AngularFirestore
   ) { }
 
-  onCheckboxChange(id: string) {
+  updateFeito(id: string) {
     this.firestore.doc("posts/" + id).update({
-      done: this.checkList
-    });
+      status: this.check
+    })
+    this.check = !this.check
   }
 
   criarLista() {
@@ -50,11 +53,10 @@ export class HomePage {
             //Como não foi identificado a tipagem dos atributos, associei
             //o dados ao Model Post que identificou o tipo deles
             const dados = e.payload.doc.data() as Post;
-            console.log(dados)
             return {
               id: e.payload.doc.id,
               title: dados.title,
-              done: dados.done
+              status: dados.status
             };
           });
           loader.dismiss();
