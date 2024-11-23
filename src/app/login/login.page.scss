@@ -1,12 +1,15 @@
 .ion-content{
     background-color: #B7FBFF;
+    color: #B7FBFF;
 }
+
 
 h1{
     margin: 35% 0 20% 0;
     font-size: 28px;
     text-align: center;
     text-transform: uppercase;
+    background-color: #B7FBFF;
 }
  
 .input-login{
@@ -14,6 +17,7 @@ h1{
     flex-direction: row;
     align-content: center;
     height: 100%;
+    background-color: #B7FBFF;
 }
  
 input{
@@ -23,12 +27,14 @@ input{
     padding: 7%;
     border-radius: 15px;
     align-items: center;
-    color: #866EC7;
+    color: #ffffff;
     border-color: #866EC7;
+    background-color:#866EC7;
 }
 
 .input-cadastro{
     background-color: #B7FBFF;
+    color: #B7FBFF;
     align-items: center;
 }
 
@@ -56,13 +62,23 @@ ion-icon{
     background-color: #866EC7;
     font-size: 20px;
     align-self: center;
+    left:100px
 }
  
 .conta{
     text-align: center;
+    align-items: center;
+    // color: #B7FBFF;
 }
  
 .checkbox{
     font-size: 16px;
 }
 
+.div {
+    background-color: #B7FBFF;
+}
+
+.section.conteudo {
+    background-color: #B7FBFF;
+}
