@@ -26,4 +26,4 @@ O to do daily é um sistema de lista de tarefas, onde você pode organizar suas 
 
 ## Etiquetas
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/2c483163-0384-4b81-ae0d-7e54bc7e9cb3/deploy-status)](https://app.netlify.com/sites/spectacular-swan-36e3f7/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/3125f3f1-393a-4054-8225-d348b8fd652f/deploy-status)](https://app.netlify.com/sites/ionic-tododaily/deploys)
