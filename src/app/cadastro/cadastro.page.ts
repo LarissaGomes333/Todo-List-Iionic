@@ -25,7 +25,7 @@ export class CadastroPage implements OnInit {
   ngOnInit() {
   }
 
-  logar(){
+  logar() {
     this.router.navigate(['login'])
   }
 
@@ -43,7 +43,7 @@ export class CadastroPage implements OnInit {
               console.log(data);
               this.navCtrl.navigateRoot("home");
             })
-          this.createUser(user);
+        this.createUser(user);
       } catch (e: any) {
         this.showToast(e);
       }
@@ -51,11 +51,12 @@ export class CadastroPage implements OnInit {
     }
   }
 
-  async createUser(user: User){
+  async createUser(user: User) {
     try {
       await this.firestore.collection("user").add(user);
     } catch (e: any) {
       this.showToast(e);
+
     }
 
   }
@@ -74,10 +75,10 @@ export class CadastroPage implements OnInit {
       this.showToast("Insira seu nome");
       return false;
     }
-    if (!this.user.phone) {
-      this.showToast("Insira seu núemro");
-      return false;
-    }
+    // if (!this.user.phone) {
+    //   this.showToast("Insira seu número");
+    //   return false;
+    // }
     return true;
   }
 

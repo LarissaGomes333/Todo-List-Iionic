@@ -3,4 +3,5 @@ export interface Post{
     date: string;
     details: string;
     status: boolean;
+    userId: string;
 }

@@ -4,6 +4,9 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { LoadingController, ToastController } from '@ionic/angular';
 import { Post } from '../models/post.model';
 import { User } from '../models/user.module'
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import firebase from 'firebase/compat/app';
+// import { Subscriber } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -13,15 +16,18 @@ import { User } from '../models/user.module'
 export class HomePage {
   post = {} as Post;
   posts: any;
-  user: any;
-  id: any;
+  user: firebase.User | null = null;
+  userData: User | null = null;
   check: boolean = true;
+  
 
   constructor(
     private router: Router,
     private toastCtrl: ToastController,
     private loadingCtrl: LoadingController,
-    private firestore: AngularFirestore
+    private firestore: AngularFirestore,
+    private afAuth: AngularFireAuth,
+    
   ) { }
 
   updateFeito(id: string) {
@@ -37,7 +43,7 @@ export class HomePage {
 
   ionViewWillEnter() {
     this.getPosts();
-    this.getUser();
+    // this.getUser();
   }
 
   async getPosts() {
@@ -45,51 +51,68 @@ export class HomePage {
       message: "Aguarde..."
     });
     loader.present();
+  
     try {
-      this.firestore.collection("posts")
-        .snapshotChanges()
-        .subscribe((data) => {
-          this.posts = data.map((e) => {
-            //Como não foi identificado a tipagem dos atributos, associei
-            //o dados ao Model Post que identificou o tipo deles
-            const dados = e.payload.doc.data() as Post;
-            return {
-              id: e.payload.doc.id,
-              title: dados.title,
-              status: dados.status
-            };
+      const user = await this.afAuth.currentUser; // Obtém o usuário logado
+      
+      if (user) {
+        // Agora podemos acessar user.uid corretamente
+        this.firestore.collection("posts", ref => ref.where('idUser', '==', user.uid))
+          .snapshotChanges()
+          .subscribe((data) => {
+            this.posts = data.map((e) => {
+              const dados = e.payload.doc.data() as Post;
+              return {
+                id: e.payload.doc.id,
+                title: dados.title,
+                status: dados.status
+              };
+            });
+            loader.dismiss();
           });
-          loader.dismiss();
-        });
-    }
-    catch (e: any) {
-      this.showToast(e);
+      } else {
+        loader.dismiss();
+      }
+    } catch (e: any) {
+      this.showToast("Erro ao buscar posts: " + e);
+      loader.dismiss();
     }
   }
+  
+  
 
-  async getUser() {
-    let loader = await this.loadingCtrl.create({
-      message: "Aguarde..."
-    });
-    loader.present();
-    try {
-      this.firestore.collection("user")
-        .snapshotChanges()
-        .subscribe((data) => {
-          this.user = data.map((e) => {
-            const dadosUser = e.payload.doc.data() as User;
-            return {
-              id: e.payload.doc.id,
-              name: dadosUser.name,
-            };
-          });
-          loader.dismiss();
-        });
-    }
-    catch (e: any) {
-      this.showToast(e);
-    }
-  }
+// Função para obter o usuário logado
+// async getUser() {
+//   const firebaseUser = await this.afAuth.currentUser;
+//   if (firebaseUser) {
+//     console.log("UID do usuário logado:", firebaseUser.uid); // Verifique o UID
+    
+//     // Acessando o documento do usuário na coleção 'users' (ou 'user' se for o nome correto da sua coleção)
+//     this.firestore.collection('users').doc(firebaseUser.uid).get().subscribe(doc => {
+//       if (doc.exists) {
+//         const userData = doc.data() as User;
+//         this.userData = userData;
+//         console.log("Dados do usuário carregados:", this.userData); // Verifique os dados
+        
+//         // Se você tiver um campo 'name' no Firestore, você pode acessar assim:
+//         console.log("Nome do usuário:", userData.name); // Exibe o nome do usuário
+//       } else {
+//         console.log("Documento não encontrado."); // Documento não existe no Firestore
+//         this.showToast("Dados do usuário não encontrados.");
+//       }
+//     }, error => {
+//       console.log("Erro ao buscar dados do usuário:", error); // Verifique o erro no console
+//       this.showToast("Erro ao buscar dados do usuário.");
+//     });
+//   } else {
+//     this.showToast("Usuário não está logado.");
+//   }
+// }
+
+
+
+
+
 
   async deletePost(id: string) {
     let loader = this.loadingCtrl.create({

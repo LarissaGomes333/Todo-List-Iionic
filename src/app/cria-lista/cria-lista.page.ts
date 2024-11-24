@@ -4,6 +4,7 @@ import { NavController } from '@ionic/angular';
 import { Post } from '../models/post.model';
 import { LoadingController, ToastController } from '@ionic/angular';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { AngularFireAuth } from '@angular/fire/compat/auth'
 
 @Component({
   selector: 'app-cria-lista',
@@ -12,14 +13,13 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 })
 export class CriaListaPage implements OnInit {
   post = {} as Post;
-
   constructor(
     private router: Router,
     public navCtrl: NavController,
     private toastCtrl: ToastController,
     private loadingCtrl: LoadingController,
-    private firestore: AngularFirestore
-
+    private firestore: AngularFirestore,
+    private afAuth: AngularFireAuth
   ) { }
 
   ngOnInit() { }
@@ -32,29 +32,41 @@ export class CriaListaPage implements OnInit {
   cancelar() {
     this.router.navigate(['home'])
   }
+  
   async createPost(post: Post) {
+    const user = await this.afAuth.currentUser;
+  
     if (this.formValidation()) {
-      let loader = this.loadingCtrl
-        .create({
-          message: "Aguarde..."
-        });
-      (await loader).present();
+      let loader = await this.loadingCtrl.create({
+        message: "Aguarde..."
+      });
+      await loader.present();
+  
       try {
-        await this.firestore.collection("posts").add({
-          title: post.title,
-          date: post.date,
-          details: post.details,
-          status: false
-        });
+        if (user) {
+          // Cria o post com o id do usuário
+          await this.firestore.collection("posts").add({
+            title: post.title,
+            date: post.date,
+            details: post.details,
+            status: false,
+            idUser: user.uid // Associando o post ao usuário logado
+          });
+          this.showToast("Post criado com sucesso!");
+        } else {
+          this.showToast("Usuário não está logado.");
+        }
       } catch (e: any) {
-        this.showToast(e);
+        this.showToast("Erro ao criar o post: " + e);
       }
-
-      (await loader).dismiss();
-
+  
+      await loader.dismiss();
       this.navCtrl.navigateRoot("home");
     }
   }
+  
+  
+
 
   formValidation() {
     if (!this.post.title) {
