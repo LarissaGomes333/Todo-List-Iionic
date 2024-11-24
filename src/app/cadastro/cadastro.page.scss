@@ -1,9 +1,16 @@
-.ion-content{
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.conteudo{
     background-color: #B7FBFF;
+    text-align: center;
+    height: 100%;
 }
 
 h1{
-    margin: 35% 0 20% 0;
+    padding: 20% 0 20% 0;
     font-size: 28px;
     text-align: center;
     text-transform: uppercase;
@@ -40,6 +47,14 @@ ion-icon{
     left: 70%;
     top: 49%
 }
+
+.check{
+    padding: 2% 5%;
+}
+
+ion-item{
+    --background: #B7FBFF;
+}
  
  
 .mensagem-senha{
@@ -51,18 +66,19 @@ ion-icon{
 .botao-cadastro{
     margin: 10% 0 10% 0;
     border-radius: 10px;
-    width: 50%;
+    width: 80%;
     height: 60px;
     background-color: #866EC7;
     font-size: 20px;
     align-self: center;
+    color: white;
 }
  
 .conta{
     text-align: center;
 }
- 
-.checkbox{
-    font-size: 16px;
+
+span{
+    color: #866EC7;
 }
 

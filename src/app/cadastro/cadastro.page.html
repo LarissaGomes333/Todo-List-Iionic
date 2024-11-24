@@ -8,7 +8,6 @@
  
       <div class="input-cadastro">
         <input [(ngModel)]="user.phone" type="tel" name="" id="" placeholder="Telefone" required>
-        <!-- <ion-icon name="eye"></ion-icon> -->
       </div>
  
       <div class="input-cadastro">
@@ -17,24 +16,17 @@
  
       <div class="input-cadastro">
         <input [(ngModel)]="user.password" type="password" name="" id="" placeholder="Senha" required>
-        <!-- <ion-icon name="eye"></ion-icon> -->
       </div>
     </section>
  
     <section>
-      <ion-item>
-        <ion-checkbox slot="start"></ion-checkbox>
-        <ion-label>Li e aceito os termos.</ion-label>
-      </ion-item>
+      <div class="check">
+        <ion-item>
+          <ion-checkbox labelPlacement="end">Li e aceito os termos de compromisso.</ion-checkbox>
+        </ion-item>
+      </div>
       <button (click)="register(user)" class="botao-cadastro">Cadastro</button>
-      <p class="conta" (click)="logar()">Já possui uma conta? <button (click)="logar()">Entre aqui</button>
+      <p class="conta" (click)="logar()">Já possui uma conta? <span>Entre aqui</span>
     </section>
   </section>
-
-  
-  <!-- Utilizar o código "(click)="logar" para a página ser direcionada para o login.
-  Obs: Não precisa estar na tag button, pode adicionar no <a> também
-  A função está no arquivo cadastro.page.ts -->
-  
-  <!-- <button (click)="logar()">Login</button> -->
 </ion-content>
