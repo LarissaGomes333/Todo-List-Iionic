@@ -17,7 +17,7 @@ h1{
     text-align: center;
     text-transform: uppercase;
     background-color: #B7FBFF;
-    color: black;
+    color: white;
 }
  
 .input-login{
@@ -26,6 +26,15 @@ h1{
     align-content: center;
     height: 100%;
     background-color: #B7FBFF;
+}
+
+p {
+    display: flex;
+    text-align: left;
+    align-items: left;
+    border-radius: 15px;
+    margin-inline-start: 50px;
+    color: white;
 }
  
 input{
@@ -77,7 +86,7 @@ ion-icon{
 .conta{
     text-align: center;
     align-items: center;
-    color: black;
+    color: white;
 }
 
 span{
