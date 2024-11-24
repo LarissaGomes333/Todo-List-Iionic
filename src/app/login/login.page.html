@@ -2,27 +2,18 @@
   <section class="conteudo">
     <h1 size="large">login</h1>
     <section>
- 
       <div class="input-cadastro">
         <input [(ngModel)]="user.email" type="email" name="" id="" placeholder="Email" required>
       </div>
  
       <div class="input-cadastro">
         <input [(ngModel)]="user.password" type="password" name="" id="" placeholder="Senha" required>
-        <!-- <ion-icon name="eye"></ion-icon> -->
       </div>
     </section>
  
     <section>
       <button (click)="login(user)" class="botao-login">Entrar</button>
-      <p class="conta" (click)="cadastrar()">Ainda não possui uma conta? <button (click)="cadastrar()">Inscreva-se</button>
+      <p class="conta" (click)="cadastrar()">Ainda não possui uma conta? <span>Inscreva-se</span>
     </section>
   </section>
-
-  
-  <!-- Utilizar o código "(click)="logar" para a página ser direcionada para o login.
-  Obs: Não precisa estar na tag button, pode adicionar no <a> também
-  A função está no arquivo cadastro.page.ts -->
-  
-  <!-- <button (click)="logar()">Login</button> -->
 </ion-content>

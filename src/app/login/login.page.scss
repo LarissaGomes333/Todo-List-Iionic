@@ -1,15 +1,23 @@
-.ion-content{
-    background-color: #B7FBFF;
-    color: #B7FBFF;
+*{
+    margin: 0;
+    padding: 0;
 }
 
+.conteudo{
+    background-color: #B7FBFF;
+    color: #B7FBFF;
+    height: 100%;
+    text-align: center;
+    
+}
 
 h1{
-    margin: 35% 0 20% 0;
+    padding: 35% 0 20% 0;
     font-size: 28px;
     text-align: center;
     text-transform: uppercase;
     background-color: #B7FBFF;
+    color: black;
 }
  
 .input-login{
@@ -55,20 +63,25 @@ ion-icon{
 }
  
 .botao-login{
-    margin: 10% 0 10% 0;
+    margin: 10% 0;
     border-radius: 10px;
-    width: 50%;
+    width: 80%;
     height: 60px;
     background-color: #866EC7;
     font-size: 20px;
     align-self: center;
-    left:100px
+    left:100px;
+    color: white;
 }
  
 .conta{
     text-align: center;
     align-items: center;
-    // color: #B7FBFF;
+    color: black;
+}
+
+span{
+    color: #866EC7;
 }
  
 .checkbox{
